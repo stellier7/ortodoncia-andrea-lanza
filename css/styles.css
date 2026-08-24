@@ -8,42 +8,63 @@
    --------------------------------------------------------------------------- */
 :root {
   /* Brand colors are overridden at runtime from config.branding */
-  --color-primary: #3a7ca5;
-  --color-primary-dark: #2e6284;
-  --color-accent: #2f9b8a;
-  --color-accent-dark: #238576;
-  --color-soft-bg: #f4f8fb;
+  --color-primary: #b89bc4;
+  --color-primary-dark: #967aa3;
+  --color-accent: #f0d060;
+  --color-accent-dark: #c9a227;
+  --color-soft-bg: #0a0a0a;
 
-  --color-ink: #1c2a33;
-  --color-ink-soft: #4a5c68;
-  --color-muted: #6b7c87;
-  --color-line: #d7e2ea;
+  --color-ink: #f2f2f2;
+  --color-ink-soft: #c4c4c4;
+  --color-muted: #9a9a9a;
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-border: rgba(255, 255, 255, 0.08);
   --color-white: #ffffff;
-  --color-surface: #ffffff;
+  --color-surface: #161616;
+  --color-surface-raised: #1e1e1e;
 
   /* Derived tints/shades for hover states and backgrounds */
-  --color-hover-bg: #f3f8fb;
-  --color-soft-wash: #eef5f9;
-  --color-lang-bg: #eef4f8;
-  --color-trust-bg: #eaf3f8;
-  --color-service-gradient-start: #e8f3f8;
-  --color-service-gradient-end: #edf8f5;
-  --color-dentist-placeholder-bg: #e8f0f5;
-  --color-gallery-placeholder: #dfeaf1;
-  --color-star: #e0a84a;
-  --color-dot-inactive: #c5d5e0;
-  --color-map-placeholder: #dce8f0;
-  --color-footer-bg: #163041;
+  --color-hover-bg: #222222;
+  --color-soft-wash: #141414;
+  --color-lang-bg: #1a1a1a;
+  --color-trust-bg: #1a1a1a;
+  --color-service-gradient-start: #242424;
+  --color-service-gradient-end: #181818;
+  --color-dentist-placeholder-bg: #252525;
+  --color-gallery-placeholder: #252525;
+  --color-star: #f5d76e;
+  --color-dot-inactive: #444444;
+  --color-map-placeholder: #1a1a1a;
+  --color-footer-bg: #050505;
+  --color-header-bg: rgba(10, 10, 10, 0.92);
+  --color-header-bg-scrolled: rgba(8, 8, 8, 0.96);
+  --color-card-shine: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.02) 42%,
+    transparent 100%
+  );
+  --color-gold-shine: linear-gradient(
+    135deg,
+    #fff8dc 0%,
+    #f5d76e 35%,
+    #e8c547 68%,
+    #c9a227 100%
+  );
 
   /* Background gradients */
-  --gradient-body-1: radial-gradient(1200px 600px at 10% -10%, rgba(58, 124, 165, 0.1), transparent 55%);
-  --gradient-body-2: radial-gradient(900px 500px at 100% 0%, rgba(47, 155, 138, 0.08), transparent 50%);
-  --gradient-body-3: linear-gradient(180deg, #eef5f9 0%, var(--color-soft-bg) 28%, #f7fafc 100%);
+  --gradient-body-1: radial-gradient(1200px 600px at 10% -10%, rgba(184, 155, 196, 0.1), transparent 55%);
+  --gradient-body-2: radial-gradient(900px 500px at 100% 0%, rgba(240, 208, 96, 0.07), transparent 50%);
+  --gradient-body-3: linear-gradient(180deg, #080808 0%, #0a0a0a 28%, #111111 100%);
 
   /* Shadow depths — reuse only these three */
-  --shadow-sm: 0 1px 2px rgba(28, 42, 51, 0.05), 0 2px 8px rgba(58, 124, 165, 0.06);
-  --shadow-md: 0 4px 12px rgba(28, 42, 51, 0.07), 0 8px 24px rgba(58, 124, 165, 0.08);
-  --shadow-lg: 0 10px 28px rgba(28, 42, 51, 0.1), 0 18px 48px rgba(58, 124, 165, 0.12);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45), 0 2px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.55), 0 18px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --shadow-gold: 0 0 22px rgba(240, 208, 96, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 
   --radius-sm: 10px;
   --radius-md: 16px;
@@ -56,7 +77,7 @@
   --space-section: clamp(3.5rem, 6vw, 5.5rem);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --focus-ring: 0 0 0 3px rgba(58, 124, 165, 0.35);
+  --focus-ring: 0 0 0 3px rgba(240, 208, 96, 0.35);
 }
 
 /* ---------------------------------------------------------------------------
@@ -131,13 +152,13 @@ img {
 }
 
 a {
-  color: var(--color-primary-dark);
+  color: var(--color-accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.15em;
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: #fff4c2;
 }
 
 button,
@@ -199,8 +220,8 @@ textarea {
 }
 
 .card {
-  background: var(--color-surface);
-  border: 1px solid rgba(215, 226, 234, 0.85);
+  background: linear-gradient(160deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 }
@@ -226,26 +247,26 @@ textarea {
 }
 
 .btn--primary {
-  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  color: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-gold-shine);
+  color: #141010;
+  box-shadow: var(--shadow-sm), var(--shadow-gold);
 }
 
 .btn--primary:hover {
-  color: var(--color-white);
+  color: #141010;
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), 0 0 28px rgba(240, 208, 96, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn--secondary {
-  background: var(--color-white);
-  color: var(--color-primary-dark);
-  border-color: rgba(58, 124, 165, 0.28);
+  background: var(--color-surface-raised);
+  color: var(--color-ink);
+  border-color: var(--color-border);
 }
 
 .btn--secondary:hover {
   background: var(--color-hover-bg);
-  color: var(--color-primary-dark);
+  color: var(--color-white);
 }
 
 .btn--lg {
@@ -265,10 +286,10 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
+  background: var(--color-header-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(215, 226, 234, 0.7);
+  border-bottom: 1px solid var(--color-border);
   transform: translate3d(0, 0, 0);
   transition: transform 280ms var(--ease-out), box-shadow 280ms ease,
     background-color 280ms ease, border-color 280ms ease;
@@ -277,7 +298,7 @@ textarea {
 
 /* Compact / elevated state once the page has scrolled */
 .site-header.is-scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: var(--color-header-bg-scrolled);
   box-shadow: var(--shadow-sm);
 }
 
@@ -367,8 +388,8 @@ body.nav-open .site-header.is-hidden {
 }
 
 .lang-toggle__btn[aria-pressed="true"] {
-  background: var(--color-white);
-  color: var(--color-primary-dark);
+  background: var(--color-surface-raised);
+  color: var(--color-accent);
   box-shadow: var(--shadow-sm);
 }
 
@@ -377,7 +398,7 @@ body.nav-open .site-header.is-hidden {
   height: 44px;
   border: 1px solid var(--color-line);
   border-radius: 12px;
-  background: var(--color-white);
+  background: var(--color-surface);
   display: inline-flex;
   flex-direction: column;
   align-items: center;
@@ -411,7 +432,7 @@ body.nav-open .site-header.is-hidden {
 .nav {
   position: fixed;
   inset: var(--header-h) 0 auto 0;
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(12, 12, 12, 0.98);
   border-bottom: 1px solid var(--color-line);
   box-shadow: var(--shadow-md);
   transform: translateY(-120%);
@@ -551,15 +572,40 @@ body.nav-open {
 }
 
 .hero__tagline {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.5rem;
   font-size: clamp(1.05rem, 2.6vw, 1.25rem);
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.92);
   max-width: 28rem;
 }
 
+.hero__tagline-sub {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 28rem;
+}
+
+.hero__tagline-specialties {
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.82rem, 2vw, 0.95rem);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 32rem;
+  background: var(--color-gold-shine);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 10px rgba(240, 208, 96, 0.35));
+}
+
 .hero__actions .btn--primary {
-  background: linear-gradient(160deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  background: var(--color-gold-shine);
+  color: #141010;
+  box-shadow: var(--shadow-sm), var(--shadow-gold);
 }
 
 @keyframes heroIn {
@@ -578,8 +624,8 @@ body.nav-open {
    --------------------------------------------------------------------------- */
 .trust {
   padding: 1.25rem 0;
-  background: var(--color-white);
-  border-bottom: 1px solid rgba(215, 226, 234, 0.9);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
   position: relative;
   transform: translate3d(0, var(--parallax-y, 0), 0);
   will-change: transform;
@@ -649,12 +695,22 @@ body.nav-open {
 }
 
 .service-card {
-  background: var(--color-surface);
-  border: 1px solid rgba(215, 226, 234, 0.9);
+  background: linear-gradient(160deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
   transition: box-shadow 220ms ease, transform 220ms var(--ease-out);
+  position: relative;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-card-shine);
+  pointer-events: none;
 }
 
 .service-card__trigger {
@@ -827,11 +883,22 @@ body.nav-open {
   display: grid;
   gap: 1.25rem;
   padding: 1.1rem;
-  background: var(--color-surface);
-  border: 1px solid rgba(215, 226, 234, 0.9);
+  background: linear-gradient(160deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   transition: box-shadow 220ms ease, transform 220ms var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.dentist-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-card-shine);
+  pointer-events: none;
 }
 
 .dentist-card__photo {
@@ -1015,7 +1082,7 @@ body.nav-open {
     height: 48px;
     border-radius: 50%;
     border: 1px solid var(--color-line);
-    background: var(--color-white);
+    background: var(--color-surface-raised);
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -1266,13 +1333,24 @@ body.gallery-lightbox-open {
 
 .testimonial-card {
   scroll-snap-align: center;
-  background: var(--color-surface);
-  border: 1px solid rgba(215, 226, 234, 0.9);
+  background: linear-gradient(160deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   padding: 1.35rem 1.25rem;
   min-height: 100%;
   transition: box-shadow 220ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-card-shine);
+  pointer-events: none;
 }
 
 .testimonial-card__stars {
@@ -1280,6 +1358,7 @@ body.gallery-lightbox-open {
   gap: 0.2rem;
   color: var(--color-star);
   margin-bottom: 0.85rem;
+  filter: drop-shadow(0 0 5px rgba(245, 215, 110, 0.45));
 }
 
 .testimonial-card__stars svg {
@@ -1329,7 +1408,8 @@ body.gallery-lightbox-open {
 
 .testimonials__dot[aria-current="true"] span {
   width: 22px;
-  background: var(--color-primary);
+  background: var(--color-accent);
+  box-shadow: 0 0 10px rgba(240, 208, 96, 0.45);
 }
 
 @media (min-width: 768px) {
@@ -1366,14 +1446,24 @@ body.gallery-lightbox-open {
   margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--color-surface);
-  border: 1px solid rgba(215, 226, 234, 0.9);
+  background: linear-gradient(160deg, var(--color-surface-raised) 0%, var(--color-surface) 100%);
+  border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
   padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: box-shadow 220ms ease, transform 220ms var(--ease-out);
+  position: relative;
+}
+
+.financing__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--color-card-shine);
+  pointer-events: none;
 }
 
 .financing__item img {
@@ -1637,15 +1727,15 @@ body.gallery-lightbox-open {
   width: 100%;
   min-height: 48px;
   border-radius: 999px;
-  background: linear-gradient(160deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-  color: var(--color-white);
+  background: var(--color-gold-shine);
+  color: #141010;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), var(--shadow-gold);
 }
 
 .sticky-bar__btn:hover {
-  color: var(--color-white);
+  color: #141010;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1826,7 +1916,7 @@ body.hero-loaded .hero__actions { transition-delay: 440ms; }
 .services,
 .gallery,
 .financing {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.02);
   position: relative;
 }
 
@@ -1854,27 +1944,27 @@ body.hero-loaded .hero__actions { transition-delay: 440ms; }
 }
 
 .services::before {
-  background: radial-gradient(circle at 18% 28%, rgba(58, 124, 165, 0.09), transparent 52%);
+  background: radial-gradient(circle at 18% 28%, rgba(184, 155, 196, 0.08), transparent 52%);
 }
 
 .dentists::before {
-  background: radial-gradient(circle at 82% 35%, rgba(47, 155, 138, 0.07), transparent 48%);
+  background: radial-gradient(circle at 82% 35%, rgba(240, 208, 96, 0.06), transparent 48%);
 }
 
 .gallery::before {
-  background: radial-gradient(circle at 50% 0%, rgba(58, 124, 165, 0.06), transparent 55%);
+  background: radial-gradient(circle at 50% 0%, rgba(184, 155, 196, 0.06), transparent 55%);
 }
 
 .testimonials::before {
-  background: radial-gradient(circle at 75% 22%, rgba(58, 124, 165, 0.06), transparent 50%);
+  background: radial-gradient(circle at 75% 22%, rgba(240, 208, 96, 0.05), transparent 50%);
 }
 
 .financing::before {
-  background: radial-gradient(circle at 22% 60%, rgba(47, 155, 138, 0.06), transparent 50%);
+  background: radial-gradient(circle at 22% 60%, rgba(240, 208, 96, 0.05), transparent 50%);
 }
 
 .location::before {
-  background: radial-gradient(circle at 88% 40%, rgba(58, 124, 165, 0.05), transparent 48%);
+  background: radial-gradient(circle at 88% 40%, rgba(184, 155, 196, 0.05), transparent 48%);
 }
 
 /* Trust bar subtle lift on scroll — properties merged into .trust block above */

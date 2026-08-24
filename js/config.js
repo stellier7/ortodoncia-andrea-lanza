@@ -1,6 +1,6 @@
 /**
  * =============================================================================
- * CLIENT CONFIG — ORTHO ODONTO / Dra. Andrea Lanza
+ * CLIENT CONFIG — Ortho-Odonto
  * =============================================================================
  * Edit THIS FILE ONLY when customizing content for this practice.
  * Empty strings / empty arrays hide the related UI automatically.
@@ -17,19 +17,29 @@ const config = {
   // SEO / METADATA
   // ---------------------------------------------------------------------------
   metadata: {
-    es: "Dra. Andrea Lanza y equipo especializado en ortodoncia, odontología general, endodoncia e implantología en Torre Agalta, Tegucigalpa. Transformando sonrisas de niños y adultos.",
-    en: "Dr. Andrea Lanza and a specialized team in orthodontics, general dentistry, endodontics, and implantology at Torre Agalta, Tegucigalpa. Transforming smiles for children and adults.",
+    es: "Ortho-Odonto — ortodoncia y clínica integral en Torre Agalta, Tegucigalpa. Diagnóstico personalizado en periodoncia, rehabilitación y endodoncia.",
+    en: "Ortho-Odonto — orthodontics and comprehensive dental clinic at Torre Agalta, Tegucigalpa. Personalized care in periodontics, rehabilitation, and endodontics.",
   },
 
   // ---------------------------------------------------------------------------
   // PRACTICE INFO
   // ---------------------------------------------------------------------------
   practice: {
-    name: "Dra. Andrea Lanza",
+    name: "Ortho-Odonto",
 
     tagline: {
-      en: "Transforming smiles",
-      es: "Transformando sonrisas",
+      en: "Orthodontics & Comprehensive Clinic",
+      es: "Ortodoncia & Clínica Integral",
+    },
+
+    taglineSub: {
+      en: "Personalized diagnosis",
+      es: "Diagnóstico personalizado",
+    },
+
+    taglineSpecialties: {
+      en: "Periodontics | Rehabilitation | Endodontics",
+      es: "Periodoncia | Rehabilitación | Endodoncia",
     },
 
     phone: "+504 9566-0020",
@@ -64,9 +74,9 @@ const config = {
   // ---------------------------------------------------------------------------
   branding: {
     primaryColor: "#B89BC4",
-    accentColor: "#7EA3D9",
+    accentColor: "#F0D060",
     primaryDark: "#967AA3",
-    softBg: "#F8F3FA",
+    softBg: "#0a0a0a",
     logoUrl: "assets/images/logo.jpeg",
     heroImageUrl: "assets/images/hero.jpeg",
   },
@@ -99,7 +109,7 @@ const config = {
       },
       sections: {
         services: "Our Services",
-        servicesLead: "Orthodontics, general dentistry, endodontics, and oral surgery — comprehensive care for the whole family.",
+        servicesLead: "Orthodontics, general dentistry, periodontics, rehabilitation, endodontics, and oral surgery.",
         dentists: "Meet the Team",
         dentistsLead: "Specialists working together for healthier, more confident smiles.",
         gallery: "Smile Gallery",
@@ -178,7 +188,7 @@ const config = {
       },
       sections: {
         services: "Nuestros Servicios",
-        servicesLead: "Ortodoncia, odontología general, endodoncia e implantología — cuidado integral para toda la familia.",
+        servicesLead: "Ortodoncia, odontología general, periodoncia, rehabilitación, endodoncia e implantología.",
         dentists: "Conoce al Equipo",
         dentistsLead: "Especialistas que trabajan juntos por sonrisas más sanas y seguras.",
         gallery: "Galería de Sonrisas",
