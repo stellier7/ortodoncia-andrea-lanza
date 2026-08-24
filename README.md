@@ -1,26 +1,24 @@
 # ortodoncia-andrea-lanza
 
-Website for **Dra. Andrea Lanza** — ortodoncia y ortopedia maxilar en Torre Agalta, Tegucigalpa.
+Website for **Dra. Andrea Lanza** and the ORTHO ODONTO team — Torre Agalta, Tegucigalpa.
 
-Built from the [dentist-template](https://github.com/stellier7/dentist-template). All practice content lives in `js/config.js`.
+All practice content lives in `js/config.js`.
 
 ## Image assets
 
-Drop client media in **`assets/images/`**:
-
 ```
 assets/images/
-  hero.jpg              ← Hero background
-  dentist.jpg           ← Doctor photo
-  logo.png / logo.svg   ← Optional logo (set branding.logoUrl in config.js)
-  gallery/
-    smile-01.jpg …      ← Replace demo gallery photos
-  financing/
-    Bac.png             ← Already included
-    Ficohsa.png         ← Already included
+  IMG_0437.jpeg   ← Logo / favicon / OG image (ORTHO ODONTO)
+  IMG_0430.jpeg   ← Dra. Andrea Lanza
+  IMG_0444.jpeg   ← Dr. Estrella Reyes
+  IMG_0442.jpeg   ← Dr. Ulises Lagos
+  IMG_0443.jpeg   ← Dr. Carlos Díaz
+  IMG_0439.jpeg   ← Hero (team photo)
+  gallery/        ← Smile gallery (replace demo images when ready)
+  financing/      ← BAC & Ficohsa logos (included)
 ```
 
-See TODO comments in `js/config.js` for each image field.
+**Still needed:** photo for Dra. Carmen Cruz (placeholder shows initials until added).
 
 ## Local preview
 
