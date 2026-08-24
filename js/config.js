@@ -1,11 +1,9 @@
 /**
  * =============================================================================
- * CLIENT CONFIG — Dra. Andrea Lanza
+ * CLIENT CONFIG — ORTHO ODONTO / Dra. Andrea Lanza
  * =============================================================================
  * Edit THIS FILE ONLY when customizing content for this practice.
  * Empty strings / empty arrays hide the related UI automatically.
- *
- * IMAGE ASSETS — drop files under /assets/images/ (see TODO comments below).
  * =============================================================================
  */
 
@@ -19,8 +17,8 @@ const config = {
   // SEO / METADATA
   // ---------------------------------------------------------------------------
   metadata: {
-    es: "Dra. Andrea Lanza, especialista en ortodoncia y ortopedia maxilar en Torre Agalta, Tegucigalpa. Transformando sonrisas de niños y adultos.",
-    en: "Dr. Andrea Lanza, specialist in orthodontics and maxillary orthopedics at Torre Agalta, Tegucigalpa. Transforming smiles for children and adults.",
+    es: "Dra. Andrea Lanza y equipo especializado en ortodoncia, odontología general, endodoncia e implantología en Torre Agalta, Tegucigalpa. Transformando sonrisas de niños y adultos.",
+    en: "Dr. Andrea Lanza and a specialized team in orthodontics, general dentistry, endodontics, and implantology at Torre Agalta, Tegucigalpa. Transforming smiles for children and adults.",
   },
 
   // ---------------------------------------------------------------------------
@@ -42,7 +40,6 @@ const config = {
       city: "Tegucigalpa",
       state: "Honduras",
       zip: "",
-      // OPTIONAL — leave blank to auto-build map query from address fields above
       mapsQuery: "Torre Agalta, Tegucigalpa, Honduras",
     },
 
@@ -53,30 +50,25 @@ const config = {
       thu: "9:00 AM – 5:00 PM",
       fri: "9:00 AM – 5:00 PM",
       sat: "9:00 AM – 5:00 PM",
-      sun: "", // Dom Cerrado — empty hides the day
+      sun: "",
     },
 
-    // OPTIONAL — leave blank to hide email in footer
     email: "",
 
-    // OPTIONAL — leave blank to hide trust-bar stats (entire bar hidden when all empty)
     yearsInPractice: "",
     patientRating: "",
   },
 
   // ---------------------------------------------------------------------------
-  // BRANDING
+  // BRANDING — colors from ORTHO ODONTO logo (assets/images/IMG_0437.jpeg)
   // ---------------------------------------------------------------------------
   branding: {
-    // OPTIONAL — leave blank to use template default colors from styles.css
-    primaryColor: "",
-    accentColor: "",
-    primaryDark: "",
-    softBg: "",
-    // TODO: Add practice logo — drop logo.png or logo.svg in assets/images/ and set path here
-    logoUrl: "",
-    // TODO: Replace with client hero photo — drop hero.jpg in assets/images/
-    heroImageUrl: "assets/images/hero.jpg",
+    primaryColor: "#B89BC4",
+    accentColor: "#7EA3D9",
+    primaryDark: "#967AA3",
+    softBg: "#F8F3FA",
+    logoUrl: "assets/images/IMG_0437.jpeg",
+    heroImageUrl: "assets/images/IMG_0439.jpeg",
   },
 
   // ---------------------------------------------------------------------------
@@ -107,9 +99,9 @@ const config = {
       },
       sections: {
         services: "Our Services",
-        servicesLead: "Clear aligners and orthodontic care for children and adults.",
-        dentists: "Meet the Doctor",
-        dentistsLead: "Warm, specialized care for every stage of your smile.",
+        servicesLead: "Orthodontics, general dentistry, endodontics, and oral surgery — comprehensive care for the whole family.",
+        dentists: "Meet the Team",
+        dentistsLead: "Specialists working together for healthier, more confident smiles.",
         gallery: "Smile Gallery",
         galleryLead: "Real results from patients like you.",
         testimonials: "What Patients Say",
@@ -186,9 +178,9 @@ const config = {
       },
       sections: {
         services: "Nuestros Servicios",
-        servicesLead: "Alineadores y ortodoncia para niños y adultos.",
-        dentists: "Conoce a la Doctora",
-        dentistsLead: "Atención especializada y cálida en cada etapa de tu sonrisa.",
+        servicesLead: "Ortodoncia, odontología general, endodoncia e implantología — cuidado integral para toda la familia.",
+        dentists: "Conoce al Equipo",
+        dentistsLead: "Especialistas que trabajan juntos por sonrisas más sanas y seguras.",
         gallery: "Galería de Sonrisas",
         galleryLead: "Resultados reales de pacientes como tú.",
         testimonials: "Lo Que Dicen Nuestros Pacientes",
@@ -250,15 +242,63 @@ const config = {
     {
       name: "Dra. Andrea Lanza",
       title: {
-        en: "Orthodontist & Maxillary Orthopedist",
-        es: "Ortodoncista y Ortopeda Maxilar",
+        en: "Orthodontics & Maxillary Orthopedics",
+        es: "Ortodoncia y Ortopedia Maxilar",
       },
       bio: {
         en: "Specialist in orthodontics and pediatric facial growth, with warm, attentive care for children and adults.",
         es: "Especialista en ortodoncia y crecimiento facial infantil, con atención cálida para niños y adultos.",
       },
-      // TODO: Replace with doctor photo — drop dentist.jpg (or andrea-lanza.jpg) in assets/images/
-      photoUrl: "assets/images/dentist.jpg",
+      photoUrl: "assets/images/IMG_0430.jpeg",
+    },
+    {
+      name: "Dra. Carmen Cruz",
+      title: {
+        en: "General Dentistry",
+        es: "Odontología General",
+      },
+      bio: {
+        en: "Comprehensive preventive and restorative care — check-ups, fillings, and everyday treatments to keep your smile healthy.",
+        es: "Atención preventiva y restaurativa integral — revisiones, resinas y tratamientos cotidianos para mantener tu sonrisa sana.",
+      },
+      // TODO: Add photo when available — drop carmen-cruz.jpeg in assets/images/
+      photoUrl: "",
+    },
+    {
+      name: "Dr. Estrella Reyes",
+      title: {
+        en: "General Dentistry",
+        es: "Odontología",
+      },
+      bio: {
+        en: "Gentle general dentistry with a focus on comfortable visits and clear guidance for patients of all ages.",
+        es: "Odontología general con enfoque en visitas cómodas y orientación clara para pacientes de todas las edades.",
+      },
+      photoUrl: "assets/images/IMG_0444.jpeg",
+    },
+    {
+      name: "Dr. Ulises Lagos",
+      title: {
+        en: "Endodontics Specialist",
+        es: "Especialista en Endodoncia",
+      },
+      bio: {
+        en: "Expert in root canal therapy and pulp treatments — saving natural teeth with precision and gentle care.",
+        es: "Experto en tratamientos de conducto y terapias pulpares — salvando dientes naturales con precisión y cuidado gentil.",
+      },
+      photoUrl: "assets/images/IMG_0442.jpeg",
+    },
+    {
+      name: "Dr. Carlos Díaz",
+      title: {
+        en: "Oral Surgery & Implantology Specialist",
+        es: "Especialista en Cirugía Bucal e Implantología",
+      },
+      bio: {
+        en: "Specialist in oral surgery and dental implants — restoring function and confidence with durable, natural-looking results.",
+        es: "Especialista en cirugía bucal e implantes dentales — recuperando función y confianza con resultados duraderos y naturales.",
+      },
+      photoUrl: "assets/images/IMG_0443.jpeg",
     },
   ],
 
@@ -269,18 +309,90 @@ const config = {
     {
       name: { en: "Clear Aligners", es: "Alineadores" },
       description: {
-        en: "Discreet clear aligners that straighten teeth with personalized plans and check-ins — for teens and adults who want a confident smile without traditional braces.",
-        es: "Alineadores transparentes que enderezan los dientes con planes personalizados y seguimientos — para adolescentes y adultos que buscan una sonrisa segura sin brackets tradicionales.",
+        en: "Discreet clear aligners that straighten teeth with personalized plans — for teens and adults who want a confident smile without traditional braces.",
+        es: "Alineadores transparentes que enderezan los dientes con planes personalizados — para adolescentes y adultos que buscan una sonrisa segura sin brackets tradicionales.",
+      },
+      icon: "aligners",
+    },
+    {
+      name: { en: "Traditional Braces", es: "Ortodoncia con Brackets" },
+      description: {
+        en: "Fixed braces for precise tooth movement and bite correction, with regular adjustments and personalized care throughout treatment.",
+        es: "Brackets fijos para mover los dientes con precisión y corregir la mordida, con ajustes periódicos y atención personalizada durante el tratamiento.",
       },
       icon: "aligners",
     },
     {
       name: { en: "Pediatric Orthodontics", es: "Ortodoncia Pediátrica" },
       description: {
-        en: "Early orthodontic care and facial growth guidance for children — gentle visits that build healthy habits and confident little smiles.",
-        es: "Atención ortodóntica temprana y guía del crecimiento facial en niños — visitas amables que crean hábitos sanos y sonrisas confiadas.",
+        en: "Early orthodontic evaluation and facial growth guidance for children — gentle visits that build healthy habits and confident smiles.",
+        es: "Evaluación ortodóntica temprana y guía del crecimiento facial en niños — visitas amables que crean hábitos sanos y sonrisas confiadas.",
       },
       icon: "pediatric",
+    },
+    {
+      name: { en: "Maxillary Orthopedics", es: "Ortopedia Maxilar" },
+      description: {
+        en: "Appliances that guide jaw growth and balance facial development in children and adolescents — preventing more complex problems later.",
+        es: "Aparatos que guían el crecimiento mandibular y equilibran el desarrollo facial en niños y adolescentes — previniendo problemas más complejos después.",
+      },
+      icon: "pediatric",
+    },
+    {
+      name: { en: "Cleanings & Exams", es: "Limpiezas y Exámenes" },
+      description: {
+        en: "Routine preventive care to keep gums healthy, detect concerns early, and maintain a bright smile for the whole family.",
+        es: "Cuidado preventivo de rutina para mantener encías sanas, detectar problemas a tiempo y conservar una sonrisa radiante en toda la familia.",
+      },
+      icon: "cleaning",
+    },
+    {
+      name: { en: "Fillings & Restorations", es: "Resinas y Restauraciones" },
+      description: {
+        en: "Tooth-colored fillings and restorations that repair decay or damage while blending naturally with your smile.",
+        es: "Resinas y restauraciones del color del diente que reparan caries o daños integrándose de forma natural con tu sonrisa.",
+      },
+      icon: "general",
+    },
+    {
+      name: { en: "Teeth Whitening", es: "Blanqueamiento Dental" },
+      description: {
+        en: "Professional whitening for a brighter smile with natural-looking results — safe and supervised by our team.",
+        es: "Blanqueamiento profesional para una sonrisa más luminosa con resultados naturales — seguro y supervisado por nuestro equipo.",
+      },
+      icon: "whitening",
+    },
+    {
+      name: { en: "Root Canal Therapy", es: "Endodoncia" },
+      description: {
+        en: "Root canal treatment to relieve pain and save infected teeth — performed with precision and gentle, modern techniques.",
+        es: "Tratamiento de conducto para aliviar el dolor y salvar dientes infectados — realizado con precisión y técnicas modernas y gentiles.",
+      },
+      icon: "general",
+    },
+    {
+      name: { en: "Dental Implants", es: "Implantes Dentales" },
+      description: {
+        en: "Titanium implants that replace missing teeth with durable, natural-looking results — restoring chewing function and confidence.",
+        es: "Implantes de titanio que reemplazan dientes perdidos con resultados duraderos y naturales — recuperando función masticatoria y confianza.",
+      },
+      icon: "implants",
+    },
+    {
+      name: { en: "Oral Surgery", es: "Cirugía Bucal" },
+      description: {
+        en: "Surgical extractions, wisdom teeth removal, and other oral surgery procedures planned for comfort and long-term health.",
+        es: "Extracciones quirúrgicas, remoción de cordales y otros procedimientos de cirugía bucal planificados para comodidad y salud a largo plazo.",
+      },
+      icon: "emergency",
+    },
+    {
+      name: { en: "Extractions", es: "Extracciones Dentales" },
+      description: {
+        en: "Simple and surgical tooth extractions when a tooth cannot be saved — with clear guidance before and after the procedure.",
+        es: "Extracciones dentales simples y quirúrgicas cuando un diente no puede conservarse — con orientación clara antes y después del procedimiento.",
+      },
+      icon: "general",
     },
   ],
 
