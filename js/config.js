@@ -274,7 +274,7 @@ const config = {
         en: "Gentle general dentistry with a focus on comfortable visits and clear guidance for patients of all ages.",
         es: "Odontología general con enfoque en visitas cómodas y orientación clara para pacientes de todas las edades.",
       },
-      photoUrl: "assets/images/IMG_0444.jpeg",
+      photoUrl: "assets/images/estrella-perez.jpeg",
     },
     {
       name: "Dr. Ulises Lagos",
