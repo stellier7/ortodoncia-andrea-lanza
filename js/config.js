@@ -261,8 +261,7 @@ const config = {
         en: "Comprehensive preventive and restorative care — check-ups, fillings, and everyday treatments to keep your smile healthy.",
         es: "Atención preventiva y restaurativa integral — revisiones, resinas y tratamientos cotidianos para mantener tu sonrisa sana.",
       },
-      // TODO: Add photo when available — drop carmen-cruz.jpeg in assets/images/
-      photoUrl: "",
+      photoUrl: "assets/images/carmen-cruz.jpeg",
     },
     {
       name: "Dr. Estrella Reyes",
