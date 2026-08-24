@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dental practice website — gentle care, modern smiles."
+    />
+    <title>Dental Practice</title>
+
+    <!-- Favicon & social preview — ORTHO ODONTO logo -->
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg" />
+    <link rel="apple-touch-icon" href="assets/images/logo.jpeg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dra. Andrea Lanza · Transformando sonrisas" />
+    <meta property="og:description" content="Especialistas en ortodoncia, odontología general, endodoncia e implantología en Torre Agalta, Tegucigalpa." />
+    <meta property="og:image" content="assets/images/logo.jpeg" />
+    <meta property="og:url" content="/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dra. Andrea Lanza · Transformando sonrisas" />
+    <meta name="twitter:description" content="Especialistas en ortodoncia, odontología general, endodoncia e implantología en Torre Agalta, Tegucigalpa." />
+    <meta name="twitter:image" content="assets/images/logo.jpeg" />
+
+    <!-- Typography: friendly modern sans — not Inter/Roboto/system defaults -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload hero image for LCP optimization -->
+    <link rel="preload" as="image" href="assets/images/hero.jpeg" fetchpriority="high" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Skip link for keyboard / screen-reader users -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ===================================================================
+         HEADER / NAV — content injected from config.js
+         =================================================================== -->
+    <header class="site-header" id="top">
+      <div class="site-header__inner">
+        <a class="brand" href="#top" data-brand>
+          <!-- logo or practice name rendered here -->
+        </a>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav__list" data-nav-list></ul>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-toggle" data-lang-toggle role="group" aria-label="Language">
+            <button type="button" class="lang-toggle__btn" data-lang="es" aria-pressed="true">
+              ES
+            </button>
+            <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false">
+              EN
+            </button>
+          </div>
+
+          <a class="btn btn--primary btn--header-cta" data-book-cta href="tel:">
+            <!-- Book Appointment -->
+          </a>
+
+          <button
+            type="button"
+            class="nav-toggle"
+            data-nav-toggle
+            aria-controls="primary-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+            <span class="nav-toggle__bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- =================================================================
+           1. HERO — parallax media plane + brand + tagline + CTA
+           ================================================================= -->
+      <section class="hero" data-hero aria-label="Hero">
+        <div class="hero__media" data-hero-media aria-hidden="true">
+          <img data-hero-image alt="" />
+        </div>
+        <div class="hero__veil" aria-hidden="true"></div>
+
+        <div class="hero__content">
+          <p class="hero__badge" data-hero-badge></p>
+          <h1 class="hero__title" data-practice-name></h1>
+          <p class="hero__tagline" data-hero-tagline></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" data-book-cta href="tel:"></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           2. TRUST BAR
+           ================================================================= -->
+      <section class="trust" data-section="trust" aria-label="Trust">
+        <div class="container">
+          <ul class="trust__list" data-trust-list></ul>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           3. SERVICES
+           ================================================================= -->
+      <section class="section services" id="services" data-section="services">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.services"></h2>
+            <p class="section__lead" data-i18n="sections.servicesLead"></p>
+          </header>
+          <div class="services__grid" data-services-grid></div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           4. MEET THE DENTIST(S)
+           ================================================================= -->
+      <section class="section dentists" id="dentists" data-section="dentists">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.dentists"></h2>
+            <p class="section__lead" data-i18n="sections.dentistsLead"></p>
+          </header>
+        </div>
+        <div class="dentists__carousel" data-dentists-carousel>
+          <div
+            class="dentists__viewport"
+            data-dentists-viewport
+            tabindex="0"
+          >
+            <div class="dentists__track" data-dentists-grid></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           5. SMILE GALLERY
+           ================================================================= -->
+      <section class="section gallery" id="gallery" data-section="gallery">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.gallery"></h2>
+            <p class="section__lead" data-i18n="sections.galleryLead"></p>
+          </header>
+        </div>
+        <div class="gallery__wrap">
+          <div class="gallery__carousel" data-gallery-carousel>
+            <div class="gallery__viewport" data-gallery-viewport tabindex="0">
+              <div class="gallery__track" data-gallery-track></div>
+            </div>
+          </div>
+          <div class="gallery__nav" data-gallery-nav>
+            <button class="gallery__arrow gallery__arrow--prev" data-gallery-prev aria-label="Previous image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="gallery__arrow gallery__arrow--next" data-gallery-next aria-label="Next image">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           6. TESTIMONIALS
+           ================================================================= -->
+      <section
+        class="section testimonials"
+        id="testimonials"
+        data-section="testimonials"
+      >
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.testimonials"></h2>
+            <p class="section__lead" data-i18n="sections.testimonialsLead"></p>
+          </header>
+          <div class="testimonials__wrap">
+            <div
+              class="testimonials__track"
+              data-testimonials-track
+              tabindex="0"
+            ></div>
+            <div class="testimonials__dots" data-testimonials-dots></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           7. FINANCING
+           ================================================================= -->
+      <section class="section financing" id="financing" data-section="financing">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.financing"></h2>
+            <p class="section__lead" data-i18n="sections.financingLead"></p>
+          </header>
+          <div class="financing__grid" data-financing-grid></div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           8. LOCATION
+           ================================================================= -->
+      <section class="section location" id="location" data-section="location">
+        <div class="container">
+          <header class="section__header">
+            <h2 class="section__title" data-i18n="sections.location"></h2>
+            <p class="section__lead" data-i18n="sections.locationLead"></p>
+          </header>
+          <div class="location__card card" data-location-card>
+            <!-- map + details injected -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         9. FOOTER
+         =================================================================== -->
+    <footer class="site-footer" data-footer>
+      <!-- injected from config -->
+    </footer>
+
+    <!-- Mobile sticky book bar -->
+    <aside class="sticky-bar" data-sticky-bar aria-label="Book appointment">
+      <a class="sticky-bar__btn" data-book-cta href="tel:"></a>
+    </aside>
+
+    <!-- Gallery lightbox preview -->
+    <div class="gallery-lightbox" data-gallery-lightbox hidden>
+      <button
+        type="button"
+        class="gallery-lightbox__backdrop"
+        data-gallery-lightbox-close
+        tabindex="-1"
+        aria-hidden="true"
+      ></button>
+      <div
+        class="gallery-lightbox__panel"
+        role="dialog"
+        aria-modal="true"
+        data-gallery-lightbox-dialog
+      >
+        <button type="button" class="gallery-lightbox__close" data-gallery-lightbox-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--prev" data-gallery-lightbox-prev>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <figure class="gallery-lightbox__figure">
+          <img class="gallery-lightbox__image" data-gallery-lightbox-image alt="" decoding="async" />
+        </figure>
+        <button type="button" class="gallery-lightbox__nav gallery-lightbox__nav--next" data-gallery-lightbox-next>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+        <p class="gallery-lightbox__counter" data-gallery-lightbox-counter aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- Config must load before app -->
+    <script src="js/config.js"></script>
+    <script src="js/carousels-embla.bundle.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

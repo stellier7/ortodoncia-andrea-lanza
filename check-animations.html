@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Check Animations</title>
+  <style>
+    body { font-family: monospace; padding: 2rem; background: #1e1e1e; color: #d4d4d4; }
+    h1 { color: #4ec9b0; }
+    .test { margin: 1rem 0; padding: 1rem; background: #252526; border-left: 3px solid #007acc; }
+    .pass { border-left-color: #4ec9b0; }
+    .fail { border-left-color: #f48771; }
+    code { background: #1e1e1e; padding: 0.2rem 0.4rem; color: #ce9178; }
+  </style>
+</head>
+<body>
+  <h1>Animation System Test</h1>
+  <div id="results"></div>
+  
+  <script>
+    const results = document.getElementById('results');
+    
+    function addResult(name, pass, details) {
+      const div = document.createElement('div');
+      div.className = `test ${pass ? 'pass' : 'fail'}`;
+      div.innerHTML = `<strong>${pass ? '✓' : '✗'} ${name}</strong><br><code>${details}</code>`;
+      results.appendChild(div);
+    }
+    
+    // Open main page in iframe to test
+    const iframe = document.createElement('iframe');
+    iframe.src = '/index.html';
+    iframe.style.display = 'none';
+    document.body.appendChild(iframe);
+    
+    iframe.onload = () => {
+      const doc = iframe.contentDocument;
+      
+      setTimeout(() => {
+        // Test 1: Check if animation CSS is loaded
+        const testEl = doc.createElement('div');
+        testEl.setAttribute('data-animate', 'slide-up');
+        doc.body.appendChild(testEl);
+        const opacity = window.getComputedStyle(testEl).opacity;
+        addResult('Animation CSS loaded', opacity === '0', `opacity = ${opacity}`);
+        
+        // Test 2: Check if hero elements have animation attributes
+        const heroTitle = doc.querySelector('.hero__title');
+        const hasTitleAnim = heroTitle && heroTitle.getAttribute('data-animate');
+        addResult('Hero title has animation', !!hasTitleAnim, `data-animate = ${hasTitleAnim || 'none'}`);
+        
+        // Test 3: Check if observer is initialized
+        const hasObserver = iframe.contentWindow.animationObserver;
+        addResult('Animation observer exists', !!hasObserver, `Observer: ${hasObserver ? 'initialized' : 'not found'}`);
+        
+        // Test 4: Check console for animation logs
+        addResult('Manual check required', true, 'Open console and look for [Animations] logs');
+        
+        // Test 5: Scroll test
+        setTimeout(() => {
+          iframe.contentWindow.scrollTo(0, 500);
+          setTimeout(() => {
+            const serviceCards = doc.querySelectorAll('.service-card');
+            const anyInView = Array.from(serviceCards).some(el => el.classList.contains('in-view'));
+            addResult('Scroll triggers animations', anyInView, `Found ${serviceCards.length} service cards, ${anyInView ? 'some' : 'none'} in-view`);
+          }, 1000);
+        }, 500);
+        
+      }, 500);
+    };
+  </script>
+</body>
+</html>

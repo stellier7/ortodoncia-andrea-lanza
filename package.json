@@ -1,0 +1,32 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Mobile-first, bilingual (ES/EN) dental practice site built with plain HTML, CSS, and vanilla JavaScript. All client-specific content lives in a single config file — swap the data, drop in images, and deploy.",
+  "main": "test-animations-live.js",
+  "scripts": {
+    "build:carousels-embla": "esbuild js/carousels-embla.mjs --bundle --format=iife --global-name=CarouselsEmbla --outfile=js/carousels-embla.bundle.js",
+    "build:dentists-embla": "npm run build:carousels-embla",
+    "postinstall": "npm run build:carousels-embla",
+    "test": "node tests/dentists-embla.test.js && node tests/gallery-embla.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stellier7/dentist-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stellier7/dentist-template/issues"
+  },
+  "homepage": "https://github.com/stellier7/dentist-template#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.62.0",
+    "puppeteer-core": "^25.4.0"
+  },
+  "dependencies": {
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0"
+  }
+}
