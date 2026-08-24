@@ -246,11 +246,23 @@
   function renderHero() {
     const nameEl = document.querySelector("[data-practice-name]");
     const taglineEl = document.querySelector("[data-hero-tagline]");
+    const taglineSubEl = document.querySelector("[data-hero-tagline-sub]");
+    const taglineSpecEl = document.querySelector("[data-hero-tagline-specialties]");
     const badgeEl = document.querySelector("[data-hero-badge]");
     const img = document.querySelector("[data-hero-image]");
 
     if (nameEl) nameEl.textContent = cfg.practice.name;
     if (taglineEl) taglineEl.textContent = localized(cfg.practice.tagline);
+    if (taglineSubEl) {
+      const text = localized(cfg.practice.taglineSub);
+      taglineSubEl.textContent = text;
+      taglineSubEl.hidden = !text;
+    }
+    if (taglineSpecEl) {
+      const text = localized(cfg.practice.taglineSpecialties);
+      taglineSpecEl.textContent = text;
+      taglineSpecEl.hidden = !text;
+    }
     if (badgeEl) badgeEl.textContent = t("hero.badge");
 
     if (img) {
