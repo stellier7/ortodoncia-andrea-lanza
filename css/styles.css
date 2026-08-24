@@ -326,7 +326,8 @@ body.nav-open .site-header.is-hidden {
 .brand__logo {
   width: 36px;
   height: 36px;
-  object-fit: contain;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .brand__mark {
