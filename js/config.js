@@ -60,15 +60,15 @@ const config = {
   },
 
   // ---------------------------------------------------------------------------
-  // BRANDING — colors from ORTHO ODONTO logo (assets/images/IMG_0437.jpeg)
+  // BRANDING — colors from ORTHO ODONTO logo (assets/images/logo.jpeg)
   // ---------------------------------------------------------------------------
   branding: {
     primaryColor: "#B89BC4",
     accentColor: "#7EA3D9",
     primaryDark: "#967AA3",
     softBg: "#F8F3FA",
-    logoUrl: "assets/images/IMG_0437.jpeg",
-    heroImageUrl: "assets/images/IMG_0439.jpeg",
+    logoUrl: "assets/images/logo.jpeg",
+    heroImageUrl: "assets/images/hero.jpeg",
   },
 
   // ---------------------------------------------------------------------------
@@ -249,7 +249,7 @@ const config = {
         en: "Specialist in orthodontics and pediatric facial growth, with warm, attentive care for children and adults.",
         es: "Especialista en ortodoncia y crecimiento facial infantil, con atención cálida para niños y adultos.",
       },
-      photoUrl: "assets/images/IMG_0430.jpeg",
+      photoUrl: "assets/images/andrea-lanza.jpeg",
     },
     {
       name: "Dra. Carmen Cruz",
@@ -423,13 +423,15 @@ const config = {
   // ---------------------------------------------------------------------------
   // SMILE GALLERY
   // ---------------------------------------------------------------------------
-  // TODO: Replace demo gallery images — drop client photos in assets/images/gallery/
   gallery: [
-    "assets/images/gallery/smile-01.jpg",
-    "assets/images/gallery/smile-02.jpg",
-    "assets/images/gallery/smile-03.jpg",
-    "assets/images/gallery/smile-04.jpg",
-    "assets/images/gallery/smile-05.jpg",
+    "assets/images/gallery/IMG_0430.jpeg",
+    "assets/images/gallery/IMG_0431.jpeg",
+    "assets/images/gallery/IMG_0432.jpeg",
+    "assets/images/gallery/IMG_0433.jpeg",
+    "assets/images/gallery/IMG_0434.jpeg",
+    "assets/images/gallery/IMG_0435.jpeg",
+    "assets/images/gallery/IMG_0436.jpeg",
+    "assets/images/gallery/IMG_0439.jpeg",
   ],
 
   // ---------------------------------------------------------------------------

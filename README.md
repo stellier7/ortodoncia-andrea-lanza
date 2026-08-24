@@ -8,17 +8,16 @@ All practice content lives in `js/config.js`.
 
 ```
 assets/images/
-  IMG_0437.jpeg   ← Logo / favicon / OG image (ORTHO ODONTO)
-  IMG_0430.jpeg   ← Dra. Andrea Lanza
-  IMG_0444.jpeg   ← Dr. Estrella Reyes
-  IMG_0442.jpeg   ← Dr. Ulises Lagos
-  IMG_0443.jpeg   ← Dr. Carlos Díaz
-  IMG_0439.jpeg   ← Hero (team photo)
-  gallery/        ← Smile gallery (replace demo images when ready)
-  financing/      ← BAC & Ficohsa logos (included)
+  logo.jpeg           ← Logo / favicon / OG image
+  hero.jpeg           ← Hero background
+  andrea-lanza.jpeg   ← Dra. Andrea Lanza
+  carmen-cruz.jpeg    ← Dra. Carmen Cruz
+  estrella-perez.jpeg ← Dr. Estrella Reyes
+  ulises-lagos.jpeg   ← Dr. Ulises Lagos
+  carlos-diaz.jpeg    ← Dr. Carlos Díaz
+  gallery/            ← Smile gallery (IMG_0430–IMG_0436, IMG_0439)
+  financing/          ← BAC & Ficohsa logos
 ```
-
-**Still needed:** photo for Dra. Carmen Cruz (placeholder shows initials until added).
 
 ## Local preview
 
