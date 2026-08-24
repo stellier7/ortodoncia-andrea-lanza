@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnostic - Hero Background</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+    }
+    
+    .diagnostic {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(0,0,0,0.9);
+      color: #0f0;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 12px;
+      max-width: 400px;
+      max-height: 100vh;
+      overflow-y: auto;
+      z-index: 10000;
+    }
+    
+    .diagnostic h2 {
+      color: #0ff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .diagnostic .pass { color: #0f0; }
+    .diagnostic .fail { color: #f00; }
+    .diagnostic .warn { color: #ff0; }
+    
+    /* HERO STYLES */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(58, 124, 165, 0.07) 0%, rgba(255, 255, 255, 0.5) 100%);
+    }
+    
+    .hero__media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    
+    .hero__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+    }
+    
+    .hero__veil {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg, rgba(16, 32, 42, 0.28) 0%, rgba(16, 32, 42, 0.18) 35%, rgba(16, 32, 42, 0.72) 100%),
+        linear-gradient(90deg, rgba(16, 32, 42, 0.45) 0%, rgba(16, 32, 42, 0.12) 70%);
+    }
+    
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+    
+    .hero__title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .hero__tagline {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #3a7ca5;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="diagnostic" id="diagnostic">
+    <h2>🔍 Diagnostic Report</h2>
+    <div id="report">Running checks...</div>
+  </div>
+  
+  <section class="hero">
+    <div class="hero__media">
+      <img id="hero-img" src="assets/images/hero.jpg" alt="">
+    </div>
+    <div class="hero__veil"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">Sonrisa Dental</h1>
+      <p class="hero__tagline">Gentle care for healthier, brighter smiles.</p>
+      <a href="#" class="btn">Book Appointment</a>
+    </div>
+  </section>
+  
+  <section class="section">
+    <h2>Scroll down to test animations</h2>
+    <p>First, let's confirm the hero background image is visible above.</p>
+  </section>
+  
+  <script>
+    const report = document.getElementById('report');
+    const results = [];
+    
+    function log(msg, type = 'info') {
+      const span = document.createElement('div');
+      span.className = type;
+      span.textContent = `${type === 'pass' ? '✓' : type === 'fail' ? '✗' : '•'} ${msg}`;
+      results.push(span);
+    }
+    
+    // Check 1: Image loading
+    const img = document.getElementById('hero-img');
+    img.onload = () => {
+      log(`Hero image loaded: ${img.naturalWidth}x${img.naturalHeight}`, 'pass');
+      updateReport();
+    };
+    img.onerror = () => {
+      log('Hero image FAILED to load', 'fail');
+      updateReport();
+    };
+    
+    // Check 2: Image src
+    log(`Image src: ${img.src}`, 'info');
+    
+    // Check 3: Computed styles
+    setTimeout(() => {
+      const heroMedia = document.querySelector('.hero__media');
+      const styles = window.getComputedStyle(heroMedia);
+      log(`Media position: ${styles.position}`, styles.position === 'absolute' ? 'pass' : 'fail');
+      log(`Media z-index: ${styles.zIndex}`, 'info');
+      
+      const imgStyles = window.getComputedStyle(img);
+      log(`Image display: ${imgStyles.display}`, 'info');
+      log(`Image opacity: ${imgStyles.opacity}`, 'info');
+      
+      updateReport();
+    }, 100);
+    
+    // Check 4: File existence
+    fetch('assets/images/hero.jpg')
+      .then(response => {
+        log(`Hero.jpg HTTP status: ${response.status}`, response.ok ? 'pass' : 'fail');
+        return response.blob();
+      })
+      .then(blob => {
+        log(`Hero.jpg size: ${(blob.size / 1024).toFixed(1)} KB`, 'pass');
+        updateReport();
+      })
+      .catch(err => {
+        log(`Hero.jpg fetch error: ${err.message}`, 'fail');
+        updateReport();
+      });
+    
+    // Check 5: Can we see the image element?
+    setTimeout(() => {
+      const rect = img.getBoundingClientRect();
+      log(`Image rect: ${rect.width.toFixed(0)}x${rect.height.toFixed(0)} at (${rect.top.toFixed(0)}, ${rect.left.toFixed(0)})`, rect.width > 0 ? 'pass' : 'fail');
+      updateReport();
+    }, 200);
+    
+    function updateReport() {
+      report.innerHTML = '';
+      results.forEach(el => report.appendChild(el));
+    }
+    
+    updateReport();
+  </script>
+</body>
+</html>
