@@ -286,7 +286,7 @@ const config = {
         en: "Expert in root canal therapy and pulp treatments — saving natural teeth with precision and gentle care.",
         es: "Experto en tratamientos de conducto y terapias pulpares — salvando dientes naturales con precisión y cuidado gentil.",
       },
-      photoUrl: "assets/images/IMG_0442.jpeg",
+      photoUrl: "assets/images/ulises-lagos.jpeg",
     },
     {
       name: "Dr. Carlos Díaz",
@@ -298,7 +298,7 @@ const config = {
         en: "Specialist in oral surgery and dental implants — restoring function and confidence with durable, natural-looking results.",
         es: "Especialista en cirugía bucal e implantes dentales — recuperando función y confianza con resultados duraderos y naturales.",
       },
-      photoUrl: "assets/images/IMG_0443.jpeg",
+      photoUrl: "assets/images/carlos-diaz.jpeg",
     },
   ],
 
