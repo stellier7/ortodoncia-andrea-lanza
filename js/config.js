@@ -74,9 +74,9 @@ const config = {
   // ---------------------------------------------------------------------------
   branding: {
     primaryColor: "#B89BC4",
-    accentColor: "#F0D060",
+    accentColor: "#7EA3D9",
     primaryDark: "#967AA3",
-    softBg: "#0a0a0a",
+    softBg: "#F8F3FA",
     logoUrl: "assets/images/logo.jpeg",
     heroImageUrl: "assets/images/hero.jpeg",
   },
