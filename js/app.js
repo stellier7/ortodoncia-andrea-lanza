@@ -123,6 +123,7 @@
     renderLocation();
     renderFooter();
     renderStickyBar();
+    renderWhatsAppFloat();
     applyStaticI18n();
     updateGalleryLightboxLabels();
     refreshAnimations();
@@ -238,6 +239,26 @@
     // Always useful when phone exists; hide only if no phone configured
     const hasPhone = Boolean((cfg.practice.phoneTel || cfg.practice.phone || "").replace(/\D/g, ""));
     bar.hidden = !hasPhone;
+  }
+
+  function renderWhatsAppFloat() {
+    const button = document.querySelector("[data-whatsapp-float]");
+    if (!button) return;
+
+    const digits = (cfg.practice.phoneTel || cfg.practice.phone || "").replace(/\D/g, "");
+    if (!digits) {
+      button.hidden = true;
+      button.removeAttribute("href");
+      return;
+    }
+
+    const message = lang === "es"
+      ? "Hola, me gustaría agendar una cita"
+      : "Hello, I would like to book an appointment";
+
+    button.hidden = false;
+    button.href = whatsappHref(message);
+    button.setAttribute("aria-label", t("whatsapp.label"));
   }
 
   // -------------------------------------------------------------------------

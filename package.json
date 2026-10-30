@@ -7,7 +7,7 @@
     "build:carousels-embla": "esbuild js/carousels-embla.mjs --bundle --format=iife --global-name=CarouselsEmbla --outfile=js/carousels-embla.bundle.js",
     "build:dentists-embla": "npm run build:carousels-embla",
     "postinstall": "npm run build:carousels-embla",
-    "test": "node tests/dentists-embla.test.js && node tests/gallery-embla.test.js"
+    "test": "node tests/dentists-embla.test.js && node tests/gallery-embla.test.js && node tests/whatsapp-float.test.js"
   },
   "repository": {
     "type": "git",

@@ -1539,7 +1539,8 @@ body.gallery-lightbox-open {
 .site-footer {
   background: var(--color-footer-bg);
   color: rgba(255, 255, 255, 0.88);
-  padding: 2.75rem 0 calc(2rem + env(safe-area-inset-bottom, 0px));
+  /* Extra bottom room so the floating WhatsApp button does not cover footer links */
+  padding: 2.75rem 0 calc(6.25rem + env(safe-area-inset-bottom, 0px));
 }
 
 .site-footer a {
@@ -1665,6 +1666,97 @@ body.gallery-lightbox-open {
 
 .sticky-bar__btn:hover {
   color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------------------
+   Floating WhatsApp button
+   --------------------------------------------------------------------------- */
+.whatsapp-float {
+  --whatsapp: #25d366;
+  --whatsapp-dark: #1ebe5a;
+  position: fixed;
+  right: max(1.15rem, env(safe-area-inset-right, 0px));
+  bottom: max(1.15rem, env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  color: var(--color-white);
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(18, 140, 70, 0.38);
+  animation: whatsapp-glow 1.8s ease-out infinite;
+}
+
+.whatsapp-float[hidden] {
+  display: none !important;
+}
+
+.whatsapp-float::before,
+.whatsapp-float::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 3px solid #25d366;
+  background: rgba(37, 211, 102, 0.28);
+  animation: whatsapp-pulse 1.6s ease-out infinite;
+}
+
+.whatsapp-float::after {
+  animation-delay: 0.8s;
+}
+
+.whatsapp-float__icon {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.whatsapp-float:hover {
+  color: var(--color-white);
+  background: var(--whatsapp-dark);
+  animation-play-state: paused;
+  transform: scale(1.06);
+}
+
+.whatsapp-float:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), 0 8px 22px rgba(18, 140, 70, 0.38);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(0.72);
+    opacity: 0.95;
+  }
+  70% {
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.85);
+    opacity: 0;
+  }
+}
+
+@keyframes whatsapp-glow {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.85),
+      0 8px 22px rgba(18, 140, 70, 0.38);
+  }
+  100% {
+    box-shadow:
+      0 0 0 26px rgba(37, 211, 102, 0),
+      0 8px 22px rgba(18, 140, 70, 0.38);
+  }
 }
 
 /* ---------------------------------------------------------------------------
